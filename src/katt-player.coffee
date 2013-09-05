@@ -53,3 +53,4 @@ exports.engines =
   'linear': require './engines/linear'
   'linear-check': require './engines/linear-check'
   'basic': require './engines/basic'
+  'silly-rest': require './engines/silly-rest'

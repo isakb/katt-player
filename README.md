@@ -18,6 +18,26 @@ and one that doesn't and just blindly replies with the consecutive response
 
 ## Built-in engines
 
+### The `basic` and `silly-rest` engine
+
+* the `basic` engine is a minimal engine with some basic functionality for
+loading scenarios / blueprints. It is supposed to be extended by other engines.
+
+* the `silly-rest` engine is a "RESTful" engine that can be used to create
+trivial routing based on request method and request URL
+
+For a simple example to get you started, run:
+	katt-player -e silly-rest silly-rest-examples.apib
+
+Then if you open your browser to the URL `http://localhost:1337/examples` you
+can expect to find a mockup of a "RESTful" app that conforms to the API defined
+in the silly-rest-examples.apib specification.
+
+The silly-rest engine doesn't have any knowledge of mediatypes, which is the
+main reason why it's silly. It also doesn't do any magic for you at the moment.
+
+### The `linear-check` and `linear` engines
+
 These two engines will look at
 
 * the request's cookie `katt_scenario` to decide which scenario to focus on

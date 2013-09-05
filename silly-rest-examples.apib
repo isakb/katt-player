@@ -1,0 +1,60 @@
+--- A silly example of a blueprint ---
+
+GET /examples
+> Accept: text/html
+< 200
+< Content-Type: text/html; charset=UTF-8
+<<<
+<!doctype html>
+<pre>
+<h1>Here are some silly <a href=/examples>examples</h1>
+<a href=/examples/1.html>examples/1.html
+<a href=/examples/1.json>examples/1.json
+<a href=/examples/nothing-is-here.html>broken link</a>
+
+<img style=width:100px id=cat src=http://cdn.grumpycats.com/wp-content/uploads/2013/08/08.28.2013-2.jpg>
+<script src=data:text/javascript;base64,Zm9yKGk9OSxjPWRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdjYXQnKTtpLS0+MDspZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChjLmNsb25lTm9kZShpKSk=></script>
+
+<form method=post action=/examples>
+<input name=name>
+<button>OK
+</form>
+>>>
+
+POST /examples
+< 404
+< Content-Type: text/html
+Thank you. I don't have any memory. But thanks for trying.
+
+GET /examples/1.html
+> Accept: *
+< 200
+< Content-Type: text/html
+<<<
+<h1>Hello!</h1>
+<p>I am an example.</p>
+>>>
+
+GET /examples/1.json
+> Accept: *
+< 200
+< Content-Type: application/json
+{
+    "message": "Hello, I am an example."
+}
+
+GET /examples/random
+< 200
+hello
+
+GET /examples/random
+< 200
+hi
+
+GET /examples/random
+< 200
+aloha
+
+GET /examples/random
+< 200
+hej
